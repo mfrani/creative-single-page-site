@@ -7,28 +7,57 @@
   <link rel="icon" type="image/png" sizes="32x32" href="#">
   <link rel="stylesheet" href="./style.css">
   <title>Creative single page site</title>
+  <style>
+    .active{
+        display: block;
+    }    
+</style>
 </head>
 <body>
-<div class="wrapper mx-auto container">
-  <nav class="navbar-section flex justify-between py-5 px-10 text-white bg-red-500">
-    <div class="logo">logo</div>
-    <ul class="flex flex-row">
-      <li class="pr-5"><a href="#">Brand</a></li>
-      <li class="pr-5"><a href="#">About</a></li>
-      <li class="pr-5"><a href="#">Services</a></li>
-      <li class="pr-5"><a href="#">Projects</a></li>
-      <li class="pr-5"><a href="#">Schedule a Call</a></li>
-    </ul>
+<div class="wrapper mx-auto max-w-screen-xl">
+  <!-- NAVBAR SECTION -->
+  <nav class="navbar-section flex flex-wrap justify-between py-12 px-12 lg:px-16 items-center text-white bg-red-500">
+    <div class="logo flex-row flex justify-between items-center"><img src="../assets/pictures/desktop/logo.svg" alt="brand-logo">
+    </div>
+    <label id="hamburgerbtn" class="md:hidden text-gray-900">
+      <svg width="24" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="#000" fill-rule="evenodd" opacity=".5"><path d="M0 0h24v2H0zM0 8h24v2H0zM0 16h24v2H0z"/></g></svg>
+    </label>
+    <div class="hidden md:flex md:flex-row md:items-center md:w-auto w-full" id="mobileMenu">
+      <ul class="md:flex justify-between items-center">
+        <li class="p-4 pr-8"><a href="#">About</a></li>
+        <li class="p-4 pr-8"><a href="#">Services</a></li>
+        <li class="p-4 pr-8"><a href="#">Projects</a></li>
+        <li class="py-4 px-6 font-bold border-solid border-black bg-black"><a href="#">Schedule a Call</a></li>
+      </ul>
+    </div>
   </nav>
-  <div class="top-banner-section">
-    <h1 class="top-banner-heading">Branding & website design agency</h1>
-    <p class="top-banner-p">We specialize in visual storytelling by creating cohesive brand and website solutions for small businesses,
-      giving lasting impressions to audiences in a digital world.
-    </p>
-    <button class="top-banner-btn">
-      Learn More
-    </button>
+  <!-- !NAVBAR SECTION -->
+
+  <!-- TOP-BANNER SECTION -->
+  <div class="top-banner-section flex">
+    <div class="top-banner-text sm:w-1/2 md:py-16 md:pl-16 block">
+      <h1 class="top-banner-heading text-6xl font-extrabold">Branding & website design agency</h1>
+      <p class="top-banner-p text-lg py-12">We specialize in visual storytelling by creating cohesive brand and website solutions for small businesses,
+        giving lasting impressions to audiences in a digital world.
+      </p>
+      <button class="top-banner-btn border-red-500 border-4 py-4 px-6 bg-red-500 font-bold text-white">
+        Learn More
+      </button>
+    </div>
+    <div class="top-banner-bg-image block sm:w-1/2" style="background-image: url('../assets/pictures/desktop/image-hero.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-blend-mode: multiply;
+  display:block">
+    </div>
   </div>
+  
+  
+  <!-- !TOP-BANNER SECTION -->
+  
+
+  <!-- DESIGN-IS-STRAT SECTION -->
   <div class="row design-is-strat-section">
     <div class="column design-is-strat-col-1"><h1 class="design-is-strat-heading">Design is strategic.</h1>
       <p class="design-is-strat-p">"A well-crafted design strategy consistently produces
@@ -41,16 +70,75 @@
       <img src="#" alt="design-is-strat-picture">
     </div>
   </div>
+  <!-- !DESIGN-IS-STRAT SECTION -->
+
+  <!-- APPROACH SECTION -->
   <div class="row approach-section">
     <div class="column approach-col-1">
       <div class="approach-heading">
+        <h1>Our approach for creating a winning brand</h1>
       </div>
     </div>
     <div class="column approach-col-2">
-      <div class="brand-strategy"></div>
-        <div class="brand-design"></div>
+      <ul>
+        <li>
+          <h4>Brand Strategy</h4>
+          <p>Brand strategy is critical for long-term success.
+             Outshining competitors and capturing the target
+             audience are key.
+          </p>
+        </li>
+        <li>
+          <h4>Brand Design</h4>
+          <p>Keeping the brand design unique and meaningful helps
+          in communicating the brand's timeless value
+          effectively.
+          </p>
+        </li>
+        <li>
+          <h3>Web Design</h3>
+          <p>A beautifully crafted website is the best tool for brand awareness,
+            and ultimately results in increased revenues.
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
+  <!-- !APPROACH SECTION -->
+
+  <!-- GUIDELINES SECTION -->
+  <div class="row guidelines-section">
+    <div class="column">
+      <h1>Brand naming & guidelines</h1>
+    </div>
+    <div class="column">
+      <img src="#" alt="lean product roadmap picture">
+    </div>
+  </div>
+  <!-- !GUIDELINES SECTION -->
+
+  <!-- FOOTER SECTION -->
+  <footer>
+    <div class="row">
+      <div class="column">
+        <h1>Let's build something great together.</h1>
+      </div>
+      <div class="column">
+        <button>Schedule a Call</button>
+      </div>
+    </div>
+  </footer>
+  <!-- !FOOTER SECTION -->
+
 </div>
+<script>
+let hamburger = document.getElementById('hamburgerbtn');
+
+let mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', function(){
+    mobileMenu.classList.toggle('active');
+});
+</script>
 </body>
 </html>
